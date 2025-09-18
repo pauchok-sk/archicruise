@@ -1,0 +1,62 @@
+.input-control {
+  width: 100%;
+}
+
+.input {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  outline: none;
+  border-radius: 16px;
+  padding: 12px 15px;
+  background-color: transparent;
+  width: 100%;
+
+  font-size: 16px;
+  line-height: 150%;
+  color: white;
+
+  transition: border-color 0.3s ease;
+
+  &:focus {
+    border-color: var(--pink);
+  }
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.32);
+  }
+
+}
+
+.input-check {
+  display: none;
+  &:checked + .wpcf7-list-item-label {
+    &::before {
+      background: linear-gradient(
+        46deg,
+        #e7fdff 0.72%,
+        #d5f0ff 29.86%,
+        #ffe7f9 68.6%,
+        #f0cdff 100%
+      );
+    }
+  }
+}
+.wpcf7-list-item-label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 0px;
+  width: fit-content;
+
+  font-size: 16px;
+  line-height: 150%;
+  color: rgba(255, 255, 255, 0.87);
+
+  &::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    border: 1px solid white;
+  }
+}

@@ -3,12 +3,60 @@
     <h3 class="modal__title _linear">Регистрация на мероприятие</h3>
     <div data-fancybox-close class="modal__close">
       <svg>
-        <use xlink:href='img/icons/icons.svg#icon-close'></use>
+        <use xlink:href="img/icons/icons.svg#icon-close"></use>
       </svg>
     </div>
   </div>
   <ul class="list modal__head-list">
-    <li>Стоимость: <span>бесплатно</span></li>
+    <li>
+      Стоимость:
+      <span>бесплатно</span>
+    </li>
     <li>Заявки принимаются до 5 декабря. Количество мест ограничено.</li>
   </ul>
+  <form action="#" class="modal__form">
+    <div class="modal__form-wrapper">
+      <div class="input-control">
+        <input type="text" placeholder="ФИО*" class="input" />
+      </div>
+      <div class="input-control">
+        <input type="text" placeholder="Должность" class="input" />
+      </div>
+      <div class="input-control">
+        <input type="tel" placeholder="Номер телефона*" class="input" />
+      </div>
+      <div class="input-control">
+        <input type="email" placeholder="Электронная почта" class="input" />
+      </div>
+      <div class="input-control">
+        <input
+          type="text"
+          placeholder="Ссылка на сайт компании: https://"
+          class="input"
+        />
+      </div>
+      <div class="input-control">
+        <label>
+          <input type="checkbox" class="input-check" />
+          <span class="wpcf7-list-item-label">
+            <span>Буду участвовать в архикруиз аворд 2025</span>
+          </span>
+        </label>
+      </div>
+    </div>
+    <div class="modal__form-bottom">
+      <button class="btn-s modal__form-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <span>Отправить заявку</span>
+      </button>
+      <p class="modal__form-policy">
+        Нажимая на кнопку “Отправить заявку” я даю согласие на обработку на
+        обработку своих
+        <a href="#" target="_blank">персональных данных</a>
+      </p>
+    </div>
+  </form>
 </div>

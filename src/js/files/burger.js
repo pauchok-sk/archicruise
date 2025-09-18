@@ -5,8 +5,7 @@ export default function burger() {
     const burgerBtn = document.querySelector("#burger-btn");
     const header = document.querySelector(".header");
 
-    document.body.addEventListener("click", handleClose);
-    burger.addEventListener("click", (e) => e.stopPropagation());
+    header.addEventListener("click", handleClose);
 
     burgerBtn.addEventListener("click", (e) => {
       e.stopPropagation();

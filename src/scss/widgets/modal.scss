@@ -1,5 +1,6 @@
 .modal {
   position: relative;
+  display: none;
   width: 905px;
   max-width: calc(100% - 20px);
   border-radius: 24px;
@@ -13,6 +14,10 @@
   );
   z-index: 1;
 
+  @include tablet {
+    padding: 24px;
+  }
+
   &::before {
     position: absolute;
     content: "";
@@ -20,7 +25,21 @@
     border-radius: 23px;
     background-color: var(--dark);
     opacity: 0.7;
+    z-index: -2;
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    inset: 0;
     z-index: -1;
+    background: url("@img/reg-event-decor.png") right 0 bottom 0 / 100% auto
+      no-repeat;
+
+    @include tablet-min {
+      background-size: 600px auto;
+      background-position: center bottom 50px;
+    
+    }
   }
 
   &__head {
@@ -29,6 +48,9 @@
     justify-content: space-between;
     gap: 20px;
     margin-bottom: 24px;
+    @include tablet {
+      gap: 16px;
+    }
   }
   &__title {
     margin: 0;
@@ -36,6 +58,19 @@
     font-size: 44px;
     line-height: 117%;
     text-transform: uppercase;
+    @include laptop-middle {
+      font-size: 38px;
+    }
+    @include laptop-min {
+      font-size: 32px;
+    }
+    @include tablet {
+      font-size: 24px;
+      line-height: 133%;
+      max-width: 300px;
+      margin: 0 auto;
+      text-align: center;
+    }
   }
   &__close {
     cursor: pointer;
@@ -48,6 +83,13 @@
 
     @include hover {
       color: white;
+    }
+    @include tablet {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      top: 16px;
+      right: 16px;
     }
 
     svg {
@@ -62,14 +104,61 @@
 
     margin-bottom: 24px;
 
+    @include tablet {
+      align-items: center;
+    }
+
     li {
       font-weight: 500;
       font-size: 14px;
       line-height: 157%;
       color: rgba(255, 255, 255, 0.56);
+      @include tablet {
+        font-size: 12px;
+        line-height: 142%;
+        text-align: center;
+        max-width: 240px;
+      }
 
       span {
         color: white;
+      }
+    }
+  }
+  &__form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__form-bottom {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    row-gap: 12px;
+    margin-top: 40px;
+    @include laptop-min {
+      margin-top: 32px;
+    }
+  }
+  &__form-btn {
+    width: 200px;
+    @include tablet-min {
+      width: 100%;
+    }
+  }
+  &__form-policy {
+    margin: 0;
+    font-size: 12px;
+    line-height: 142%;
+    color: rgba(255, 255, 255, 0.54);
+    max-width: 330px;
+
+    a {
+      color: rgba(255, 255, 255, 0.87);
+      text-decoration: underline;
+      @include hover {
+        text-decoration: none;
       }
     }
   }
