@@ -1,0 +1,235 @@
+.btn-reset {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  color: inherit;
+}
+
+.btn-s {
+  @include flex-center;
+  position: relative;
+  cursor: pointer;
+  gap: 8px;
+  border: none;
+  padding: 12px 32px;
+  background-color: var(--pink);
+  width: fit-content;
+  border-radius: 100px;
+  overflow: hidden;
+
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--dark);
+
+  z-index: 1;
+
+  @include hover {
+    div {
+      &:first-child {
+        top: -30px;
+        left: -245px;
+      }
+      &:nth-child(2) {
+        left: 50px;
+        top: -40px;
+      }
+      &:nth-child(3) {
+        transform: rotate(-55deg);
+        left: -65px;
+        top: -90px;
+      }
+      &:nth-child(4) {
+        transform: rotate(0deg);
+        top: -90px;
+        left: -210px;
+      }
+    }
+  }
+  @include tablet {
+    font-size: 15px;
+    padding: 12px 8px;
+  }
+
+  svg,
+  img {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+
+  div {
+    position: absolute;
+    filter: blur(25px);
+    pointer-events: none;
+
+    transition:
+      left 0.3s linear,
+      right 0.3s linear,
+      bottom 0.3s linear,
+      top 0.3s linear,
+      transform 0.3s linear;
+
+    &:first-child {
+      background: radial-gradient(
+        51.83% 43.7% at 52.67% 35.62%,
+        rgb(197, 93, 159) 0%,
+        rgba(255, 255, 255, 0.5) 100%
+      );
+      width: 495px;
+      height: 180px;
+      transform: rotate(45deg);
+      top: -32px;
+      left: -70px;
+      z-index: -1;
+    }
+    &:nth-child(2) {
+      background: radial-gradient(
+        83.88% 43.59% at 52.67% 35.62%,
+        rgb(197, 187, 245) 0%,
+        rgba(255, 255, 255, 0.5) 100%
+      );
+      width: 395px;
+      height: 95px;
+      transform: rotate(-11deg);
+      top: -45px;
+      left: -205px;
+      z-index: -2;
+    }
+    &:nth-child(3) {
+      background: radial-gradient(
+        19.1% 28.08% at 52.05% 52.43%,
+        rgb(112, 200, 239) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      width: 440px;
+      height: 305px;
+      transform: rotate(-24deg);
+      top: -130px;
+      left: -225px;
+      z-index: -1;
+    }
+    &:nth-child(4) {
+      background: radial-gradient(
+        34.51% 34.86% at 50% 50%,
+        rgb(212, 68, 145) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      width: 405px;
+      height: 195px;
+      transform: rotate(20deg);
+      top: -135px;
+      left: -20px;
+      z-index: -4;
+    }
+  }
+}
+
+.btn-o {
+  @include flex-center;
+  position: relative;
+  cursor: pointer;
+  width: fit-content;
+  gap: 8px;
+  border-radius: 100px;
+  padding: 12px 32px;
+  border-radius: 100px;
+  overflow: hidden;
+
+  text-align: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: white;
+  transition: all 0.5s ease;
+
+  z-index: 1;
+
+  transition: color 0.3s ease;
+
+  @include hover {
+    span {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+  @include tablet {
+    font-size: 15px;
+    padding: 12px 8px;
+  }
+
+  span {
+    pointer-events: none;
+    position: relative;
+    background: linear-gradient(
+      46deg,
+      #e7fdff 0.72%,
+      #d5f0ff 29.86%,
+      #ffe7f9 68.6%,
+      #f0cdff 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 1;
+
+    &::before {
+      content: attr(data-text);
+      position: absolute;
+
+      background: linear-gradient(
+        64deg,
+        #08acdc 0.72%,
+        #a4d5ff 18.02%,
+        #eddeff 44.61%,
+        #c65a9c 88.62%,
+        #ac3174 100%
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 100%;
+
+      opacity: 0;
+      z-index: 1;
+
+      transition: opacity 0.5s ease;
+    }
+  }
+
+  div {
+    position: absolute;
+    content: "";
+    border-radius: 100px;
+  }
+
+  div:first-child {
+    inset: 0;
+    background: linear-gradient(
+      46deg,
+      #e7fdff 0.72%,
+      #d5f0ff 29.86%,
+      #ffe7f9 68.6%,
+      #f0cdff 100%
+    );
+    z-index: -2;
+  }
+  div:nth-child(2) {
+    inset: 2px;
+    background-color: var(--dark);
+    z-index: -1;
+  }
+
+  svg,
+  img {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+}

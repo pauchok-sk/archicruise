@@ -1,0 +1,119 @@
+.header {
+  position: sticky;
+  padding: 16px 0px;
+  z-index: 90;
+  background-color: rgba(7, 6, 7, 0.64);
+
+  transition:
+    transform 0.4s ease,
+    background-color 0.4s ease;
+
+  &._bg {
+    background-color: #606060;
+  }
+
+  &._scroll {
+    transform: translateY(-100%);
+  }
+
+  &__wrapper {
+    @include flex-between;
+    gap: 20px;
+  }
+  &__logo {
+    display: block;
+    width: 200px;
+    @include desktop {
+      width: 165px;
+    }
+    @include tablet {
+      width: 145px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+
+      &:first-child {
+        @include laptop-min {
+          display: none;
+        }
+      }
+      &:nth-child(2) {
+        @media (min-width: 992px) {
+          display: none;
+        }
+      }
+    }
+  }
+  &__list {
+    display: flex;
+    gap: 70px;
+
+    @media (max-width: 1679px) {
+      gap: 30px;
+    }
+    @include laptop-min {
+      display: none;
+    }
+
+    a {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 157%;
+
+      transition: color 0.3s ease;
+
+      @include hover {
+        color: var(--pink);
+      }
+    }
+  }
+  &__button {
+    display: flex;
+    gap: 16px;
+    @include laptop {
+      display: none;
+    }
+  }
+  &__burger-btn {
+    @include flex-center;
+    flex-direction: column;
+    width: 40px;
+    height: 40px;
+    gap: 4px;
+
+    color: rgba(255, 255, 255, 0.56);
+
+    transition: color 0.3s ease;
+
+    @include hover {
+      color: white;
+    }
+
+    @media (min-width: 992px) {
+      display: none;
+    }
+
+    &._active {
+      div {
+        position: absolute;
+        &:first-child {
+          transform: rotate(45deg);
+        }
+        &:nth-child(2) {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+
+    div {
+      width: 32px;
+      height: 2px;
+      border-radius: 3px;
+      background-color: currentColor;
+
+      transition: transform 0.3s ease;
+    }
+  }
+}
