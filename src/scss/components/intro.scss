@@ -1,0 +1,97 @@
+.intro {
+  display: flex;
+  align-items: flex-end;
+  min-height: 100vh;
+  @include laptop-min {
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 16px 0px 20px 0px;
+  }
+  @include tablet {
+    justify-content: space-between;
+  }
+  &__head {
+    display: flex;
+    align-items: flex-end;
+    gap: 24px;
+    @include tablet {
+      flex-direction: column;
+      align-items: start;
+      gap: 0;
+    }
+  }
+  &__title {
+    font-weight: 400;
+    font-size: 170px;
+    line-height: 100%;
+    margin: 0;
+    background: linear-gradient(
+      46deg,
+      #e7fdff 0.72%,
+      #d5f0ff 29.86%,
+      #ffe7f9 68.6%,
+      #f0cdff 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @media (max-width: 1679px) {
+      font-size: 120px;
+    }
+    @include desktop {
+      font-size: 96px;
+    }
+    @include laptop-middle {
+      font-size: 64px;
+    }
+    @include laptop-min {
+      font-size: 54px;
+    }
+    @include tablet {
+      font-size: 48px;
+      line-height: 117%;
+    }
+    @include tablet {
+      font-size: 42px;
+    }
+  }
+  &__head-descr {
+    padding-bottom: 28px;
+    margin: 0;
+    max-width: 340px;
+
+    font-size: 24px;
+    line-height: 133%;
+    color: rgba(255, 255, 255, 0.72);
+    @include laptop-middle {
+      padding-bottom: 0;
+      font-size: 20px;
+      max-width: none;
+      flex: 1;
+    }
+    @include tablet-min {
+      font-size: 12px;
+      line-height: 142%;
+      color: rgba(255, 255, 255, 0.87);
+    }
+  }
+  &__buttons {
+    margin-top: 24px;
+    width: 100%;
+    
+    @media (min-width: 992px) {
+      display: none;
+    }
+  }
+  &__buttons-wrapper {
+    display: flex;
+    width: 100%;
+    gap: 16px;
+  }
+  &__btn {
+    @include tablet {
+      flex: 1;
+    }
+  }
+}

@@ -3,11 +3,13 @@ import burger from "./files/burger.js";
 import burgerList from "./files/burgerList.js";
 import inputmask from "./files/inputmask.js";
 import spoller from "./files/spoller.js";
+import updateIntroHeight from "./files/updateIntroHeight.js";
 
 spoller();
 burgerList();
 burger();
 inputmask();
+updateIntroHeight();
 
 Fancybox.bind("[data-fancybox]", {
   closeButton: false,
