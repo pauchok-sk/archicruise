@@ -23,6 +23,9 @@
     color: rgba(255, 255, 255, 0.32);
   }
 
+  &._date {
+    background: url('@img/calendar.svg') center right 16px / 20px auto no-repeat;
+  }
 }
 
 .input-check {
@@ -52,7 +55,7 @@
   color: rgba(255, 255, 255, 0.87);
 
   @include tablet {
-    font-size: 14px;
+    font-size: 12px;
     padding: 8px 0px;
   }
 

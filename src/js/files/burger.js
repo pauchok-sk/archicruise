@@ -19,7 +19,6 @@ export default function burger() {
     function handleOpen() {
       burger.classList.add("_open");
       burgerBtn.classList.add("_active");
-      header.classList.add("_bg");
       document.body.classList.add("body-hidden");
       burger.style.top = `${header.clientHeight}px`;
     }
@@ -27,7 +26,6 @@ export default function burger() {
       burger.classList.remove("_open");
       burgerBtn.classList.remove("_active");
       document.body.classList.remove("body-hidden");
-      header.classList.remove("_bg");
     }
   }
 }
