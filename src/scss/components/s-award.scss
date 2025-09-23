@@ -1,0 +1,52 @@
+.s-award {
+  &__title {
+    max-width: 1015px;
+    text-align: center;
+    margin: 0px auto 24px auto;
+
+    @include tablet-min {
+      text-align: start;
+    }
+  }
+  &__content {
+    max-width: 720px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.56);
+    margin: 0 auto;
+
+    @include tablet-min {
+      text-align: start;
+    }
+  }
+  &__adv {
+    @include flex-center;
+    flex-wrap: wrap;
+    gap: 80px;
+    margin-top: 120px;
+    @include laptop-min {
+      margin-top: 80px;
+      gap: 64px;
+    }
+    @include tablet {
+      margin-top: 64px;
+    }
+    @include tablet-min {
+      flex-direction: column;
+    }
+  }
+  &__adv-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 25px 20px;
+
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: rgba(255, 255, 255, 0.56);
+  }
+  &__adv-icon {
+  }
+}

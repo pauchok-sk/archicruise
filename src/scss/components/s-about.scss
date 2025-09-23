@@ -1,0 +1,61 @@
+.s-about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 80px 0px;
+  min-height: 100vh;
+  @include laptop-min {
+    padding-bottom: 245px;
+  }
+  &__head {
+    @include flex-between;
+    gap: 30px;
+    margin-bottom: 40px;
+    @include laptop-min {
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 130px;
+    }
+  }
+  &__title-wrapper {
+  }
+  &__title {
+    font-weight: 400;
+    margin-bottom: 8px;
+    @include laptop-min {
+      font-size: 52px !important;
+      line-height: 108% !important;
+    }
+    @include mobile {
+      font-size: 45px !important;
+    }
+  }
+  &__rbs-logo {
+    @include laptop-min {
+      width: 390px;
+    }
+  }
+  &__content {
+    color: rgba(255, 255, 255, 0.72);
+    margin: 0;
+    max-width: 735px;
+    @include laptop {
+      max-width: 500px;
+    }
+    @include laptop-min {
+      width: 100%;
+      max-width: none;
+    }
+  }
+  &__partners-slider {
+    overflow: visible !important;
+
+    .swiper-wrapper {
+      align-items: center;
+    }
+  }
+  &__partners-slide {
+    width: fit-content !important;
+  }
+}
