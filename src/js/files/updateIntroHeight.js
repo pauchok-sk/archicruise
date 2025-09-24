@@ -3,7 +3,6 @@ export default function updateIntroHeight() {
 
   if (intro) {
     const header = document.querySelector(".header");
-    console.log(header.clientHeight)
 
     function update() {
       intro.style.minHeight = `${window.visualViewport.height - header.clientHeight}px`;

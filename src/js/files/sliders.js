@@ -30,7 +30,7 @@ export default function sliders() {
   const gallerySliders = document.querySelectorAll(".s-gallery__slider");
 
   if (gallerySliders.length) {
-    gallerySliders.forEach(slider => {
+    gallerySliders.forEach((slider) => {
       const swiper = new Swiper(slider, {
         speed: 900,
         slidesPerView: "auto",
@@ -40,7 +40,7 @@ export default function sliders() {
         },
         navigation: {
           prevEl: ".s-gallery .slider-nav__btn._prev",
-          nextEl: ".s-gallery .slider-nav__btn._next"
+          nextEl: ".s-gallery .slider-nav__btn._next",
         },
         breakpoints: {
           768: {
@@ -49,6 +49,29 @@ export default function sliders() {
           },
         },
       });
-    })
+    });
+  }
+
+  const saySlider = document.querySelector(".s-say__slider");
+
+  if (saySlider) {
+    const swiper = new Swiper(saySlider, {
+      speed: 900,
+      slidesPerView: "auto",
+      spaceBetween: 8,
+      autoplay: {
+        delay: 4000,
+      },
+      navigation: {
+        prevEl: ".s-say .slider-nav__btn._prev",
+        nextEl: ".s-say .slider-nav__btn._next",
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: "auto",
+          spaceBetween: 24,
+        },
+      },
+    });
   }
 }

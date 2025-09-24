@@ -48,7 +48,33 @@
     line-height: 150%;
     color: rgba(255, 255, 255, 0.56);
 
-    @include hover {
+    @media (min-width: 992px) {
+      @include hover {
+        .s-award__adv-icon {
+          &:nth-child(1) {
+            opacity: 0;
+          }
+          &:nth-child(2) {
+            opacity: 1;
+            transform: translate(-50%, -20%) scale(1);
+          }
+        }
+        .s-award__item-content {
+          span {
+            &:nth-child(1) {
+              opacity: 0;
+            }
+            &:nth-child(2) {
+              opacity: 1;
+            }
+          }
+        }
+        .s-award__item-btn {
+          opacity: 1;
+        }
+      }
+    }
+    &._active {
       .s-award__adv-icon {
         &:nth-child(1) {
           opacity: 0;

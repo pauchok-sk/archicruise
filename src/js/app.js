@@ -1,4 +1,5 @@
 import "../scss/style.scss";
+import awardScroll from "./files/awardScroll.js";
 import burger from "./files/burger.js";
 import burgerList from "./files/burgerList.js";
 import inputmask from "./files/inputmask.js";
@@ -16,6 +17,7 @@ updateIntroHeight();
 select();
 sliders();
 tabs();
+awardScroll();
 
 Fancybox.bind("[data-fancybox]", {
   closeButton: false,
