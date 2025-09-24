@@ -1,0 +1,35 @@
+.slider-nav {
+  flex-shrink: 0;
+  display: flex;
+  gap: 10px;
+  @include tablet {
+    display: none;
+  }
+  &__btn {
+    @include flex-center;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.08);
+
+    color: white;
+
+    transition: opacity .3s ease, background-color .3s ease, color;
+
+    @include hover {
+      background-color: white;
+      color: var(--dark);
+    }
+
+    &.swiper-button-disabled {
+      pointer-events: none;
+      opacity: 0.32;
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}

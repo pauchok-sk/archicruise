@@ -6,6 +6,12 @@
 <path d="M2.73486 6.27344L8.19427 11.2734L13.6519 6.27344" stroke="currentColor" stroke-opacity="0.64" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </symbol><symbol viewBox="0 0 19 18" fill="none" id="icon-mail" xmlns="http://www.w3.org/2000/svg">
 <path d="M3.59375 4.59375L9.5 8.39063L15.8281 4.59375M4.4375 13.7283C3.50552 13.7283 2.75 12.9727 2.75 12.0408V5.4375C2.75 4.50552 3.50552 3.75 4.4375 3.75H14.5625C15.4945 3.75 16.25 4.50552 16.25 5.4375V12.0408C16.25 12.9727 15.4945 13.7283 14.5625 13.7283H4.4375Z" stroke="currentColor" stroke-opacity="0.72" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+</symbol><symbol viewBox="0 0 18 18" fill="none" id="icon-next" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 0L7.41375 1.58625L13.6913 7.875H0V10.125H13.6913L7.41375 16.4138L9 18L18 9L9 0Z" fill="currentColor" fill-opacity="0.87"/>
+</symbol><symbol viewBox="0 0 49 48" fill="none" id="icon-play" xmlns="http://www.w3.org/2000/svg">
+<path d="M36.4465 21.8747C39.1795 23.3977 39.1895 25.3135 36.4465 27.0354L15.2525 41.3291C12.5896 42.7502 10.7809 41.9111 10.5911 38.8361L10.5011 8.91964C10.4412 6.08709 12.7744 5.2868 14.9977 6.64487L36.4465 21.8747Z" fill="currentColor" stroke="currentColor" stroke-width="1.4"/>
+</symbol><symbol viewBox="0 0 18 18" fill="none" id="icon-prev" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 18L10.5862 16.4138L4.30875 10.125L18 10.125L18 7.875L4.30875 7.875L10.5862 1.58625L9 7.86805e-07L-7.86805e-07 9L9 18Z" fill="currentColor" fill-opacity="0.87"/>
 </symbol><symbol viewBox="0 0 16 16" fill="none" id="icon-rotate" xmlns="http://www.w3.org/2000/svg">
 <path d="M4.83826 3.45569L11.9228 3.62848M11.9228 3.62848L12.0956 10.7131M11.9228 3.62848L3.62869 11.9226" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
 </symbol><symbol viewBox="0 0 19 18" fill="none" id="icon-tel" xmlns="http://www.w3.org/2000/svg">

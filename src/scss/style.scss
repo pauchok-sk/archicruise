@@ -14,6 +14,8 @@
 @import "./ui/form";
 @import "./ui/select";
 @import "./ui/title";
+@import "./ui/slider";
+@import "./ui/tab";
 
 // widgets
 @import "./widgets/burger";
@@ -28,5 +30,6 @@
 @import "./components/s-plan";
 @import "./components/s-speakers";
 @import "./components/s-conditions";
+@import "./components/s-gallery";
 
 @import "./components/footer";

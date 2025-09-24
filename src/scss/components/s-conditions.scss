@@ -32,7 +32,6 @@
       font-size: 18px;
       padding: 20px 0px;
       gap: 12px;
-
     }
 
     .num {
@@ -76,6 +75,41 @@
 
       @media (min-width: 768px) {
         display: none;
+      }
+    }
+  }
+  &__bottom {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    @include tablet-min {
+      flex-direction: column-reverse;
+      gap: 16px;
+    }
+  }
+  &__btn {
+    @include tablet-min {
+      width: 100%;
+    }
+  }
+  &__bottom-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    li {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 157%;
+      color: rgba(255, 255, 255, 0.56);
+
+      @include tablet-min {
+        font-size: 12px;
+      }
+
+      span {
+        color: white;
       }
     }
   }

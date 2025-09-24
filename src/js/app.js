@@ -5,6 +5,7 @@ import inputmask from "./files/inputmask.js";
 import select from "./files/select.js";
 import sliders from "./files/sliders.js";
 import spoller from "./files/spoller.js";
+import tabs from "./files/tabs.js";
 import updateIntroHeight from "./files/updateIntroHeight.js";
 
 spoller();
@@ -14,6 +15,7 @@ inputmask();
 updateIntroHeight();
 select();
 sliders();
+tabs();
 
 Fancybox.bind("[data-fancybox]", {
   closeButton: false,

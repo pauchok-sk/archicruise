@@ -26,4 +26,29 @@ export default function sliders() {
       },
     });
   }
+
+  const gallerySliders = document.querySelectorAll(".s-gallery__slider");
+
+  if (gallerySliders.length) {
+    gallerySliders.forEach(slider => {
+      const swiper = new Swiper(slider, {
+        speed: 900,
+        slidesPerView: "auto",
+        spaceBetween: 8,
+        autoplay: {
+          delay: 3500,
+        },
+        navigation: {
+          prevEl: ".s-gallery .slider-nav__btn._prev",
+          nextEl: ".s-gallery .slider-nav__btn._next"
+        },
+        breakpoints: {
+          768: {
+            slidesPerView: "auto",
+            spaceBetween: 16,
+          },
+        },
+      });
+    })
+  }
 }
