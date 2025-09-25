@@ -2081,6 +2081,9 @@ body {
   .s-title {
     font-size: 28px
   }
+  .custom-cursor {
+    display: none
+  }
   .modal__title {
     font-size: 32px
   }
