@@ -212,11 +212,11 @@
   div:first-child {
     inset: 0;
     background: linear-gradient(
-      46deg,
-      #e7fdff 0.72%,
-      #d5f0ff 29.86%,
-      #ffe7f9 68.6%,
-      #f0cdff 100%
+      135deg,
+      #ffe7f9 0%,
+      #d5f0ff 26%,
+      #97dbff 64%,
+      #fb7cc1 100%
     );
     z-index: -2;
   }
@@ -291,7 +291,10 @@
 
   text-align: center;
 
-  transition: color .3s ease, background-color .3s ease, opacity .3s ease;
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    opacity 0.3s ease;
 
   @include hover {
     background-color: rgba(255, 255, 255, 0.4);

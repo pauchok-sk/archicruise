@@ -1,37 +1,35 @@
 .s-conditions {
-  &__head {
-    display: flex;
-    justify-content: space-between;
+  .s-title {
+    flex-shrink: 0;
   }
   &__head-content {
     max-width: 540px;
     font-weight: 500;
     font-size: 14px;
     line-height: 157%;
+    margin: 0;
     @include tablet-min {
       display: none;
     }
   }
   &__item {
-    padding: 40px 0px;
-    display: flex;
-    align-items: center;
-    gap: 64px;
-
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 133%;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.56);
+    position: relative;
+    z-index: 1;
 
     &:not(:last-child) {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      .s-conditions__item-wrapper {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
     }
 
-    @include tablet {
-      font-size: 18px;
-      padding: 20px 0px;
-      gap: 12px;
+    &:hover {
+      .s-conditions__item-content {
+        opacity: 1;
+        max-height: 100px;
+      }
+      &::before {
+        opacity: 1;
+      }
     }
 
     .num {
@@ -57,7 +55,6 @@
         line-height: 157%;
       }
     }
-
     .circle {
       @include flex-center;
       border-radius: 50%;
@@ -76,6 +73,76 @@
       @media (min-width: 768px) {
         display: none;
       }
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      inset: 0;
+      background: url("@img/linear-conditions.png") left 0 center / cover
+        no-repeat;
+      opacity: 0;
+      z-index: -1;
+
+      transition: opacity 0.3s ease;
+    }
+  }
+  &__item-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 24px 0px;
+    gap: 64px;
+
+    @include laptop {
+      gap: 30px;
+    }
+    @include laptop-min {
+      flex-wrap: wrap;
+    }
+    @include tablet {
+      padding: 20px 0px;
+      gap: 12px;
+    }
+  }
+  &__item-title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 133%;
+    text-transform: uppercase;
+    flex: 1;
+    color: rgba(255, 255, 255, 0.56);
+
+    @include tablet {
+      font-size: 18px;
+    }
+  }
+  &__item-content {
+    font-weight: 600;
+    max-width: 540px;
+    margin: 0px 0px 0px auto;
+    background: linear-gradient(
+      46deg,
+      #e7fdff 0.72%,
+      #d5f0ff 29.86%,
+      #ffe7f9 68.6%,
+      #f0cdff 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    opacity: 0;
+
+    transition:
+      opacity 0.4s linear,
+      max-height 0.4s linear;
+
+    @include laptop-min {
+      width: 100%;
+      order: 3;
+      max-width: none;
+      max-height: 0px;
+      height: 100%;
+      overflow: hidden;
     }
   }
   &__bottom {

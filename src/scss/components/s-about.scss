@@ -1,12 +1,27 @@
 .s-about {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
   padding: 80px 0px;
   min-height: 100vh;
+  z-index: 1;
   @include laptop-min {
     padding-bottom: 245px;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(7, 6, 7, 0.6) 0%,
+      rgba(7, 6, 7, 0.4) 24.92%,
+      #070607 96.91%
+    );
+    z-index: -1;
   }
   &__head {
     @include flex-between;

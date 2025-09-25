@@ -1,7 +1,9 @@
 .intro {
+  position: relative;
   display: flex;
   align-items: flex-end;
   min-height: 100vh;
+  z-index: 1;
   @include laptop-min {
     flex-direction: column;
     justify-content: flex-end;
@@ -10,6 +12,7 @@
   @include tablet {
     justify-content: space-between;
   }
+
   &__head {
     display: flex;
     align-items: flex-end;
