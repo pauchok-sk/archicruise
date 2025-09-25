@@ -74,4 +74,17 @@ export default function sliders() {
       },
     });
   }
+
+  const partnersSlider = document.querySelector(".s-partners__slider");
+
+  if (partnersSlider && window.matchMedia("(max-width: 767px)").matches) {
+    const swiper = new Swiper(partnersSlider, {
+      speed: 900,
+      slidesPerView: "auto",
+      spaceBetween: 16,
+      autoplay: {
+        delay: 3500,
+      },
+    });
+  }
 }
