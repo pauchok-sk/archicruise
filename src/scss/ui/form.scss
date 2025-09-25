@@ -26,6 +26,16 @@
   &._date {
     background: url('@img/calendar.svg') center right 16px / 20px auto no-repeat;
   }
+
+  &.wpcf7-not-valid {
+    border-color: var(--red);
+  }
+}
+.wpcf7-not-valid-tip {
+  display: block;
+  margin-top: 10px;
+  color: var(--red);
+  font-size: 12px;
 }
 
 .input-check {

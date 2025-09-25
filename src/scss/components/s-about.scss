@@ -9,6 +9,9 @@
   z-index: 1;
   @include laptop-min {
     padding-bottom: 245px;
+    & + section {
+      margin-top: 20px;
+    }
   }
 
   &::before {

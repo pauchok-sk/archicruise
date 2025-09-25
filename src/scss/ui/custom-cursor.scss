@@ -1,0 +1,12 @@
+.custom-cursor {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  filter: blur(10px);
+  background: linear-gradient(59deg, #08acdc 0.72%, #a4d5ff 21.33%, #d1b9ee 41.48%, #c65a9c 76.97%, #ac3174 100%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: transform 0.3s ease;
+}

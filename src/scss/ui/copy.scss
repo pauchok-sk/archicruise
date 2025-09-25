@@ -1,0 +1,35 @@
+[data-copy] {
+  position: relative;
+  &._active {
+    &::after {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+  &::after {
+    position: absolute;
+    font-size: 14px;
+    color: white;
+    top: -130%;
+    right: 0;
+    padding: 8px;
+    border-radius: 4px;
+    background: radial-gradient(
+      147.78% 97.05% at 27.01% 37.71%,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(13, 172, 220, 0.24) 60.46%,
+      rgba(212, 68, 145, 0.5) 100%
+    );
+    content: attr(data-copy-text);
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+
+    transition:
+      opacity 0.3s ease,
+      visiblity 0.3s ease,
+      transform 0.3s ease;
+  }
+}
