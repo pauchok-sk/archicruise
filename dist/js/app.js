@@ -654,6 +654,14 @@
             update();
         }
     }
+    function videoBg() {
+        const videos = document.querySelectorAll(".video-bg");
+        if (videos.length) document.addEventListener("DOMContentLoaded", () => {
+            videos.forEach(video => {
+                video.play();
+            });
+        });
+    }
     spoller();
     burgerList();
     burger();
@@ -668,6 +676,7 @@
     partnersLogo();
     cursor();
     conditionsSpoller();
+    videoBg();
     Fancybox.bind("[data-fancybox]", {
         closeButton: false
     });

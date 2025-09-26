@@ -13,6 +13,7 @@ import sliders from "./files/sliders.js";
 import spoller from "./files/spoller.js";
 import tabs from "./files/tabs.js";
 import updateIntroHeight from "./files/updateIntroHeight.js";
+import videoBg from "./files/videoBg.js";
 
 spoller();
 burgerList();
@@ -28,6 +29,7 @@ mediaAdaptive();
 partnersLogo();
 cursor();
 conditionsSpoller();
+videoBg();
 
 Fancybox.bind("[data-fancybox]", {
   closeButton: false,
