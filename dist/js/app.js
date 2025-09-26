@@ -181,54 +181,6 @@
             });
         });
     }
-    class FloatingCursor {
-        constructor() {
-            this.cursor = document.querySelector(".custom-cursor");
-            this.mouseX = 0;
-            this.mouseY = 0;
-            this.cursorX = 0;
-            this.cursorY = 0;
-            this.cursorSpeed = .06;
-            this.init();
-        }
-        init() {
-            document.addEventListener("mousemove", e => {
-                this.mouseX = e.clientX;
-                this.mouseY = e.clientY;
-            });
-            this.addHoverEffects();
-            this.animate();
-        }
-        animate() {
-            this.cursorX += (this.mouseX - this.cursorX) * this.cursorSpeed;
-            this.cursorY += (this.mouseY - this.cursorY) * this.cursorSpeed;
-            this.cursor.style.left = this.cursorX + "px";
-            this.cursor.style.top = this.cursorY + "px";
-            requestAnimationFrame(() => this.animate());
-        }
-        addHoverEffects() {
-            const interactiveElements = document.querySelectorAll(".interactive, .card, button, a");
-            interactiveElements.forEach(element => {
-                element.addEventListener("mouseenter", () => {
-                    this.cursor.classList.add("cursor-hover");
-                });
-                element.addEventListener("mouseleave", () => {
-                    this.cursor.classList.remove("cursor-hover");
-                });
-            });
-            document.addEventListener("mousedown", () => {
-                this.cursor.style.transform = "scale(0.6)";
-            });
-            document.addEventListener("mouseup", () => {
-                this.cursor.style.transform = "";
-            });
-        }
-    }
-    function cursor() {
-        document.addEventListener("DOMContentLoaded", () => {
-            new FloatingCursor;
-        });
-    }
     function headerScroll() {
         const header = document.querySelector(".header");
         if (header) {
@@ -721,7 +673,6 @@
     copy();
     mediaAdaptive();
     partnersLogo();
-    cursor();
     conditionsSpoller();
     videoBg();
     anchors_anchors();

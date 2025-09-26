@@ -230,7 +230,7 @@ img {
   max-width: 100%
 }
 body {
-  font-family: Gilory,sans-serif;
+  font-family: Gilroy,sans-serif;
   background-color: var(--dark);
   color: #fff
 }
@@ -1040,7 +1040,7 @@ body {
 }
 .intro__title {
   font-weight: 400;
-  font-size: 170px;
+  font-size: 180px;
   line-height: 100%;
   margin: 0;
   background: linear-gradient(46deg,#e7fdff .72%,#d5f0ff 29.86%,#ffe7f9 68.6%,#f0cdff 100%);
@@ -1094,8 +1094,7 @@ body {
   margin-bottom: 8px
 }
 .s-about__rbs-logo {
-  display: block;
-  width: 360px
+  display: block
 }
 .s-about__content {
   color: hsla(0,0%,100%,.72);
@@ -2261,9 +2260,6 @@ body {
     font-size: 48px;
     line-height: 117%
   }
-  .intro__title {
-    font-size: 43px
-  }
   .intro__btn {
     flex: 1
   }
@@ -2485,7 +2481,7 @@ body {
     margin-bottom: 4px
   }
   .footer__title {
-    font-size: 48px;
+    font-size: 52px;
     line-height: 115%
   }
   .footer__social {
@@ -2516,6 +2512,14 @@ body {
   }
   .footer::after {
     background: url(../img/footer-bg-mob.png) right 0 bottom 0/100% no-repeat
+  }
+}
+@media (max-width:380px) {
+  .intro__title {
+    font-size: 44px
+  }
+  .footer__title {
+    font-size: 48px
   }
 }
 @media (any-hover:hover) {

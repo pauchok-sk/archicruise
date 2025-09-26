@@ -81,8 +81,11 @@
       font-size: 64px;
     }
     @include tablet-min {
-      font-size: 48px;
+      font-size: 52px;
       line-height: 115%;
+    }
+    @media (max-width: 380px) {
+      font-size: 48px;
     }
   }
 

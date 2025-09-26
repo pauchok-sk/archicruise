@@ -29,7 +29,7 @@ awardScroll();
 copy();
 mediaAdaptive();
 partnersLogo();
-cursor();
+// cursor();
 conditionsSpoller();
 videoBg();
 anchors();

@@ -25,7 +25,7 @@
   }
   &__title {
     font-weight: 400;
-    font-size: 170px;
+    font-size: 180px;
     line-height: 100%;
     margin: 0;
     background: linear-gradient(
@@ -55,8 +55,8 @@
       font-size: 48px;
       line-height: 117%;
     }
-    @include tablet {
-      font-size: 43px;
+    @media (max-width: 380px) {
+      font-size: 44px;
     }
   }
   &__head-descr {
