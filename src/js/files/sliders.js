@@ -30,7 +30,7 @@ export default function sliders() {
   const gallerySliders = document.querySelectorAll(".s-gallery__slider");
 
   if (gallerySliders.length) {
-    gallerySliders.forEach((slider) => {
+    gallerySliders.forEach((slider, index) => {
       const swiper = new Swiper(slider, {
         speed: 900,
         slidesPerView: "auto",
@@ -39,8 +39,14 @@ export default function sliders() {
           delay: 3500,
         },
         navigation: {
-          prevEl: ".s-gallery .slider-nav__btn._prev",
-          nextEl: ".s-gallery .slider-nav__btn._next",
+          prevEl: document
+            .querySelector(".s-gallery")
+            .querySelectorAll(".s-gallery__wrapper-nav")
+            [index].querySelector(".slider-nav__btn._prev"),
+          nextEl: document
+            .querySelector(".s-gallery")
+            .querySelectorAll(".s-gallery__wrapper-nav")
+            [index].querySelector(".slider-nav__btn._next"),
         },
         breakpoints: {
           768: {

@@ -6,6 +6,7 @@ import burgerList from "./files/burgerList.js";
 import conditionsSpoller from "./files/conditionsSpoller.js";
 import copy from "./files/copy.js";
 import cursor from "./files/cursor.js";
+import galleryTabsToggle from "./files/galleryTabsToggle.js";
 import headerScroll from "./files/headerScroll.js";
 import inputmask from "./files/inputmask.js";
 import mediaAdaptive from "./files/mediaAdaptive.js";
@@ -34,6 +35,7 @@ conditionsSpoller();
 videoBg();
 anchors();
 headerScroll();
+galleryTabsToggle();
 
 Fancybox.bind("[data-fancybox]", {
   closeButton: false,

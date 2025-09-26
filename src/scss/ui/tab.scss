@@ -6,3 +6,12 @@
     display: block;
   }
 }
+
+[data-app-tab] {
+  display: none;
+
+  transition: opacity .4s ease;
+  &._active {
+    display: block;
+  }
+}

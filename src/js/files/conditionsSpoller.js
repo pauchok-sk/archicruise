@@ -1,7 +1,7 @@
 export default function conditionsSpoller() {
   const items = document.querySelectorAll(".s-conditions__item");
 
-  if (items.length && window.matchMedia("(max-width: 991px)")) {
+  if (items.length && window.matchMedia("(max-width: 991px)").matches) {
     items.forEach((item) => {
       item.addEventListener("click", () => {
         const content = item.querySelector(".s-conditions__item-content");

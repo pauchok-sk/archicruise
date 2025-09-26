@@ -153,7 +153,7 @@
     }
     function conditionsSpoller() {
         const items = document.querySelectorAll(".s-conditions__item");
-        if (items.length && window.matchMedia("(max-width: 991px)")) items.forEach(item => {
+        if (items.length && window.matchMedia("(max-width: 991px)").matches) items.forEach(item => {
             item.addEventListener("click", () => {
                 const content = item.querySelector(".s-conditions__item-content");
                 if (item.classList.contains("_active")) {
@@ -180,6 +180,24 @@
                 setTimeout(() => btn.classList.remove("_active"), 2e3);
             });
         });
+    }
+    function galleryTabsToggle() {
+        const buttons = document.querySelectorAll(".s-gallery__tab-btn");
+        if (buttons.length) {
+            const bar = document.querySelector(".s-gallery__tabs-bar");
+            buttons.forEach((btn, i) => {
+                btn.addEventListener("click", () => {
+                    const transformWidth = i * btn.clientWidth;
+                    bar.style.transform = `translateX(${transformWidth}px)`;
+                });
+            });
+            window.addEventListener("resize", () => {
+                const buttons = document.querySelectorAll(".s-gallery__tab-btn");
+                const index = Array.from(buttons).findIndex(b => b.classList.contains("_active"));
+                const transformWidth = index * document.querySelector(".s-gallery__tab-btn._active").clientWidth;
+                bar.style.transform = `translateX(${transformWidth}px)`;
+            });
+        }
     }
     function headerScroll() {
         const header = document.querySelector(".header");
@@ -297,21 +315,18 @@
     }
     function partnersLogo() {
         const icon = document.querySelector(".s-partners__logo");
-        const maxX = 25;
-        const maxY = 25;
+        let maxY = 10;
         function animateIcon() {
+            maxY *= -1;
             anime({
                 targets: icon,
-                translateX: () => (Math.random() - .5) * 2 * maxX,
-                translateY: () => (Math.random() - .5) * 2 * maxY,
-                duration: 4e3,
-                rotate: () => (Math.random() - .5) * 20,
+                translateY: () => maxY,
+                duration: 2e3,
+                rotate: () => (Math.random() - .5) * 10,
                 easing: "easeInOutQuad",
                 complete: animateIcon
             });
         }
-        icon.addEventListener("mouseenter", () => anime.remove(icon));
-        icon.addEventListener("mouseleave", animateIcon);
         animateIcon();
     }
     function select_select() {
@@ -378,7 +393,7 @@
             });
         }
         const gallerySliders = document.querySelectorAll(".s-gallery__slider");
-        if (gallerySliders.length) gallerySliders.forEach(slider => {
+        if (gallerySliders.length) gallerySliders.forEach((slider, index) => {
             new Swiper(slider, {
                 speed: 900,
                 slidesPerView: "auto",
@@ -387,8 +402,8 @@
                     delay: 3500
                 },
                 navigation: {
-                    prevEl: ".s-gallery .slider-nav__btn._prev",
-                    nextEl: ".s-gallery .slider-nav__btn._next"
+                    prevEl: document.querySelector(".s-gallery").querySelectorAll(".s-gallery__wrapper-nav")[index].querySelector(".slider-nav__btn._prev"),
+                    nextEl: document.querySelector(".s-gallery").querySelectorAll(".s-gallery__wrapper-nav")[index].querySelector(".slider-nav__btn._next")
                 },
                 breakpoints: {
                     768: {
@@ -629,7 +644,19 @@
                 const tabId = btn.dataset.tabBtn;
                 const allButtons = container.querySelector(".tabs-nav").querySelectorAll("[data-tab-btn]");
                 const allTabs = Array.from(container.querySelector(".tabs-content").children).filter(child => child.hasAttribute("data-tab"));
+                const appTabs = container.querySelectorAll("[data-app-tab]");
                 const currentTab = container.querySelector(`[data-tab="${tabId}"]`);
+                if (appTabs.length) {
+                    const currentAppTab = container.querySelector(`[data-app-tab="${tabId}"]`);
+                    appTabs.forEach(t => {
+                        t.classList.remove("_active");
+                        t.style.opacity = 0;
+                    });
+                    currentAppTab.classList.add("_active");
+                    setTimeout(() => {
+                        currentAppTab.style.opacity = 1;
+                    }, 10);
+                }
                 allTabs.forEach(t => {
                     t.classList.remove("_active");
                     t.style.opacity = 0;
@@ -677,6 +704,7 @@
     videoBg();
     anchors_anchors();
     headerScroll();
+    galleryTabsToggle();
     Fancybox.bind("[data-fancybox]", {
         closeButton: false
     });

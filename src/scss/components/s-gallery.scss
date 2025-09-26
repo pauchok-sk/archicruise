@@ -1,18 +1,40 @@
 .s-gallery {
   overflow: hidden;
   &__tabs-nav {
+    position: relative;
     display: flex;
+    align-items: center;
     width: fit-content;
     border-radius: 100px;
     padding: 2px;
     background: rgba(120, 120, 128, 0.12);
     margin-bottom: 42px;
+
+    z-index: 1;
+
     @include laptop-min {
       margin-bottom: 32px;
     }
     @include tablet {
       margin-bottom: 24px;
     }
+    @include tablet-min {
+      width: 100%;
+    }
+  }
+  &__tabs-bar {
+    position: absolute;
+    content: "";
+    width: calc(50% - 1px);
+    height: calc(100% - 2px);
+    border-radius: 100px;
+    opacity: 1;
+    background-color: white;
+    z-index: -1;
+
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
   }
   &__tab-btn {
     padding: 7px 10px;
@@ -31,12 +53,17 @@
 
     &._active {
       color: rgba(0, 0, 0, 0.87);
-      background-color: white;
     }
 
     @include hover {
       color: rgba(0, 0, 0, 0.87);
-      background-color: white;
+
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    @include tablet-min {
+      width: auto;
+      flex: 1;
     }
   }
   &__slider {

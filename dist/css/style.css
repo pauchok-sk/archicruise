@@ -654,6 +654,13 @@ body {
 [data-tab]._active {
   display: block
 }
+[data-app-tab] {
+  display: none;
+  transition: opacity .4s ease
+}
+[data-app-tab]._active {
+  display: block
+}
 .video-bg {
   position: absolute;
   width: 100%;
@@ -1451,14 +1458,30 @@ body {
   overflow: hidden
 }
 .s-gallery__tabs-nav {
+  position: relative;
   display: flex;
+  align-items: center;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   border-radius: 100px;
   padding: 2px;
   background: rgba(120,120,128,.12);
-  margin-bottom: 42px
+  margin-bottom: 42px;
+  z-index: 1
+}
+.s-gallery__tabs-bar {
+  position: absolute;
+  content: "";
+  width: calc(50% - 1px);
+  height: calc(100% - 2px);
+  border-radius: 100px;
+  opacity: 1;
+  background-color: #fff;
+  z-index: -1;
+  transition: opacity .3s ease,-webkit-transform .3s ease;
+  transition: opacity .3s ease,transform .3s ease;
+  transition: opacity .3s ease,transform .3s ease,-webkit-transform .3s ease
 }
 .s-gallery__tab-btn {
   padding: 7px 10px;
@@ -1472,8 +1495,7 @@ body {
   transition: color .3s ease,background-color .3s ease
 }
 .s-gallery__tab-btn._active {
-  color: rgba(0,0,0,.87);
-  background-color: #fff
+  color: rgba(0,0,0,.87)
 }
 .s-gallery__slider {
   overflow: visible!important
@@ -2441,6 +2463,13 @@ body {
   .s-conditions__bottom-list li {
     font-size: 12px
   }
+  .s-gallery__tabs-nav {
+    width: 100%
+  }
+  .s-gallery__tab-btn {
+    width: auto;
+    flex: 1
+  }
   .s-gallery__slide {
     height: 270px
   }
@@ -2586,7 +2615,7 @@ body {
   }
   .s-gallery__tab-btn:hover {
     color: rgba(0,0,0,.87);
-    background-color: #fff
+    background-color: hsla(0,0%,100%,.5)
   }
   .s-gallery__slide:hover img {
     -webkit-transform: scale(1.07);
@@ -2675,7 +2704,7 @@ body {
   }
   .s-gallery__tab-btn:active {
     color: rgba(0,0,0,.87);
-    background-color: #fff
+    background-color: hsla(0,0%,100%,.5)
   }
   .s-gallery__slide:active img {
     -webkit-transform: scale(1.07);
