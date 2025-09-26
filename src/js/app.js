@@ -2,6 +2,7 @@ import "../scss/style.scss";
 import awardScroll from "./files/awardScroll.js";
 import burger from "./files/burger.js";
 import burgerList from "./files/burgerList.js";
+import conditionsSpoller from "./files/conditionsSpoller.js";
 import copy from "./files/copy.js";
 import cursor from "./files/cursor.js";
 import inputmask from "./files/inputmask.js";
@@ -26,6 +27,7 @@ copy();
 mediaAdaptive();
 partnersLogo();
 cursor();
+conditionsSpoller();
 
 Fancybox.bind("[data-fancybox]", {
   closeButton: false,

@@ -22,13 +22,29 @@
       }
     }
 
-    &:hover {
+    @media (min-width: 992px) {
+      &:hover {
+        .s-conditions__item-content {
+          opacity: 1;
+          max-height: 100px;
+        }
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+
+    &._active {
       .s-conditions__item-content {
         opacity: 1;
         max-height: 100px;
       }
       &::before {
         opacity: 1;
+      }
+
+      .circle {
+        transform: rotate(90deg)
       }
     }
 
@@ -64,6 +80,8 @@
       color: white;
       background: rgba(7, 9, 11, 0.56);
       margin-left: auto;
+
+      transition: transform .3s ease;
 
       svg {
         width: 14px;

@@ -1347,12 +1347,16 @@ body {
 .s-conditions__item:not(:last-child) .s-conditions__item-wrapper {
   border-bottom: 1px solid hsla(0,0%,100%,.08)
 }
-.s-conditions__item:hover .s-conditions__item-content {
+.s-conditions__item._active .s-conditions__item-content {
   opacity: 1;
   max-height: 100px
 }
-.s-conditions__item:hover::before {
+.s-conditions__item._active::before {
   opacity: 1
+}
+.s-conditions__item._active .circle {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg)
 }
 .s-conditions__item .num {
   display: flex;
@@ -1379,7 +1383,10 @@ body {
   height: 26px;
   color: #fff;
   background: rgba(7,9,11,.56);
-  margin-left: auto
+  margin-left: auto;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease,-webkit-transform .3s ease
 }
 .s-conditions__item .circle svg {
   width: 14px;
@@ -1961,6 +1968,13 @@ body {
   }
   .intro__buttons {
     display: none
+  }
+  .s-conditions__item:hover .s-conditions__item-content {
+    opacity: 1;
+    max-height: 100px
+  }
+  .s-conditions__item:hover::before {
+    opacity: 1
   }
 }
 @media (min-width:992px)and (any-hover:hover) {
