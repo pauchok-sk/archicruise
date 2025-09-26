@@ -1,5 +1,30 @@
 (() => {
     "use strict";
+    function anchors_anchors() {
+        const burger = document.querySelector("#burger");
+        const burgerBtn = document.querySelector("#burger-btn");
+        const anchors = document.querySelectorAll(".anchor");
+        if (anchors.length) anchors.forEach(anchor => {
+            const link = anchor.querySelector("a");
+            link.addEventListener("click", function(e) {
+                e.preventDefault();
+                const href = this.getAttribute("href").substring(1);
+                const scrollTarget = document.getElementById(href);
+                if (scrollTarget) {
+                    window.scrollBy({
+                        top: scrollTarget.getBoundingClientRect().top,
+                        behavior: "smooth"
+                    });
+                    handlerBurgerClose();
+                }
+            });
+            function handlerBurgerClose() {
+                burger.classList.remove("_open");
+                burgerBtn.classList.remove("_active");
+                document.body.classList.remove("body-hidden");
+            }
+        });
+    }
     function awardScroll() {
         const items = document.querySelectorAll(".s-award__adv-item");
         if (items.length && window.matchMedia("(max-width: 991px)").matches) {
@@ -130,7 +155,18 @@
         const items = document.querySelectorAll(".s-conditions__item");
         if (items.length && window.matchMedia("(max-width: 991px)")) items.forEach(item => {
             item.addEventListener("click", () => {
-                if (item.classList.contains("_active")) item.classList.remove("_active"); else item.classList.add("_active");
+                const content = item.querySelector(".s-conditions__item-content");
+                if (item.classList.contains("_active")) {
+                    content.style.opacity = "0";
+                    setTimeout(() => {
+                        item.classList.remove("_active");
+                    }, 100);
+                } else {
+                    item.classList.add("_active");
+                    setTimeout(() => {
+                        content.style.opacity = "1";
+                    }, 100);
+                }
             });
         });
     }
@@ -192,6 +228,17 @@
         document.addEventListener("DOMContentLoaded", () => {
             new FloatingCursor;
         });
+    }
+    function headerScroll() {
+        const header = document.querySelector(".header");
+        if (header) {
+            let lastScrollTop = 0;
+            window.addEventListener("scroll", () => {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScrollTop && scrollTop >= header.clientHeight) header.classList.add("_scroll"); else header.classList.remove("_scroll");
+                lastScrollTop = scrollTop;
+            });
+        }
     }
     function inputmask() {
         const inputs = document.querySelectorAll('input[type="tel"]');
@@ -677,6 +724,8 @@
     cursor();
     conditionsSpoller();
     videoBg();
+    anchors_anchors();
+    headerScroll();
     Fancybox.bind("[data-fancybox]", {
         closeButton: false
     });

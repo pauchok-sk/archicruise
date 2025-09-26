@@ -890,15 +890,14 @@ body {
 }
 .header {
   position: sticky;
+  top: 0;
   padding: 16px 0;
   z-index: 90;
   background-color: rgba(7,6,7,.64);
   transition: background-color .4s ease,-webkit-transform .4s ease;
   transition: transform .4s ease,background-color .4s ease;
-  transition: transform .4s ease,background-color .4s ease,-webkit-transform .4s ease
-}
-.header._bg {
-  background-color: #606060
+  transition: transform .4s ease,background-color .4s ease,-webkit-transform .4s ease;
+  z-index: 90
 }
 .header._scroll {
   -webkit-transform: translateY(-100%);
@@ -1093,6 +1092,10 @@ body {
 .s-about__title {
   font-weight: 400;
   margin-bottom: 8px
+}
+.s-about__rbs-logo {
+  display: block;
+  width: 360px
 }
 .s-about__content {
   color: hsla(0,0%,100%,.72);
@@ -1348,8 +1351,7 @@ body {
   border-bottom: 1px solid hsla(0,0%,100%,.08)
 }
 .s-conditions__item._active .s-conditions__item-content {
-  opacity: 1;
-  max-height: 100px
+  display: block
 }
 .s-conditions__item._active::before {
   opacity: 1
@@ -1424,7 +1426,7 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0;
-  transition: opacity .4s linear,max-height .4s linear
+  transition: opacity .4s linear
 }
 .s-conditions__bottom {
   margin-top: 24px;
@@ -1970,8 +1972,7 @@ body {
     display: none
   }
   .s-conditions__item:hover .s-conditions__item-content {
-    opacity: 1;
-    max-height: 100px
+    opacity: 1
   }
   .s-conditions__item:hover::before {
     opacity: 1
@@ -2151,8 +2152,7 @@ body {
     width: 100%;
     order: 3;
     max-width: none;
-    max-height: 0;
-    height: 100%;
+    display: none;
     overflow: hidden
   }
   .s-gallery__tabs-nav {

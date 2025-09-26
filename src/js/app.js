@@ -1,10 +1,12 @@
 import "../scss/style.scss";
+import anchors from "./files/anchors.js";
 import awardScroll from "./files/awardScroll.js";
 import burger from "./files/burger.js";
 import burgerList from "./files/burgerList.js";
 import conditionsSpoller from "./files/conditionsSpoller.js";
 import copy from "./files/copy.js";
 import cursor from "./files/cursor.js";
+import headerScroll from "./files/headerScroll.js";
 import inputmask from "./files/inputmask.js";
 import mediaAdaptive from "./files/mediaAdaptive.js";
 import partnersLogo from "./files/partnersLogo.js";
@@ -30,6 +32,8 @@ partnersLogo();
 cursor();
 conditionsSpoller();
 videoBg();
+anchors();
+headerScroll();
 
 Fancybox.bind("[data-fancybox]", {
   closeButton: false,

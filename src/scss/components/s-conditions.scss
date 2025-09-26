@@ -26,7 +26,6 @@
       &:hover {
         .s-conditions__item-content {
           opacity: 1;
-          max-height: 100px;
         }
         &::before {
           opacity: 1;
@@ -36,8 +35,7 @@
 
     &._active {
       .s-conditions__item-content {
-        opacity: 1;
-        max-height: 100px;
+        display: block;
       }
       &::before {
         opacity: 1;
@@ -71,6 +69,7 @@
         line-height: 157%;
       }
     }
+
     .circle {
       @include flex-center;
       border-radius: 50%;
@@ -151,15 +150,13 @@
     opacity: 0;
 
     transition:
-      opacity 0.4s linear,
-      max-height 0.4s linear;
+      opacity 0.4s linear;
 
     @include laptop-min {
       width: 100%;
       order: 3;
       max-width: none;
-      max-height: 0px;
-      height: 100%;
+      display: none;
       overflow: hidden;
     }
   }

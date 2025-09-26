@@ -1,5 +1,6 @@
 .header {
   position: sticky;
+  top: 0;
   padding: 16px 0px;
   z-index: 90;
   background-color: rgba(7, 6, 7, 0.64);
@@ -8,10 +9,8 @@
     transform 0.4s ease,
     background-color 0.4s ease;
 
-  &._bg {
-    background-color: #606060;
-  }
-
+  z-index: 90;
+  
   &._scroll {
     transform: translateY(-100%);
   }
